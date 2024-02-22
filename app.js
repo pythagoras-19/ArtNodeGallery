@@ -31,6 +31,6 @@ server.listen(port, () => {
 });
 
 app.post('/submit', (req, res) => {
-    const userInput = req.body.userInput; // Make sure you have body-parser configured to parse request body
+    const userInput = req.body.userInput;
     res.json({ message: `Received: ${userInput}` });
 });
