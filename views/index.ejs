@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1><%= message %></h1>
+<!-- User input form -->
+<form id="userInputForm">
+    <input type="text" id="userInput" placeholder="Enter something..." required>
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Section to display dynamic content -->
+<div class="content" id="dynamicContent">
+    <!-- Dynamic content will be displayed here -->
+</div>
+
+<script>
+    // Prevent the form from submitting traditionally
+    document.getElementById('userInputForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get the user input
+        var userInput = document.getElementById('userInput').value;
+
+        // Optionally, send the user input to the server using AJAX
+        // For demonstration, we'll just update the content directly
+        document.getElementById('dynamicContent').innerHTML = `<p>You entered: <strong>${userInput}</strong></p>`;
+
+        // Clear the input field
+        document.getElementById('userInput').value = '';
+    });
+</script>
+</body>
+</html>
